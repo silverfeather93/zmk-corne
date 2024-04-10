@@ -26,7 +26,7 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                mtgap_layer {
+                default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Y    |  P      |  O      |  U      |  J  |   |  K  |  D      |  L      |  C      |  W      | BKSP |
 // | CTRL | gui(I)|  sft(N) |  ctl(E) |  alt(A) |  .  |   |  M  |  alt(H) |  ctl(T) |  sft(S) |  gui(R) |  '   |
@@ -71,22 +71,22 @@
                 number_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  +  |  -  |  *  |  /  |  %  |   |  \  |  (  |  )  |  [  |  ]  | BKSP |
-// | CTRL |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |  `   |
+// | CTRL |LG(1)|LS(2)|LC(3)|LA(4)|  5  |   |  6  |LA(7)|LC(8)|LS(9)|LG(0)|  `   |
 // | SHFT |  !  |  ~  |  ;  |  &  |  '  |   |  =  |  <  |  >  |  {  |  }  |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp  TAB  &kp PLUS &kp MINUS &kp ASTRK &kp SLASH &kp PRCNT &kp BSLH  &kp LPAR  &kp RPAR  &kp LBKT &kp RBKT &kp BSPC
-   &kp LCTRL &kp N1   &kp N2    &kp N3    &kp N4    &kp N5    &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &kp GRV
-   &kp LSHFT &kp EXCL &kp TILDE &kp SEMI  &kp AMPS  &kp SQT   &kp EQUAL &kp LT    &kp GT    &kp LBRC &kp RBRC &kp TILDE
+   &kp  TAB  &kp PLUS    &kp MINUS    &kp ASTRK    &kp SLASH   &kp PRCNT    &kp BSLH  &kp LPAR    &kp RPAR     &kp LBKT     &kp RBKT    &kp BSPC
+   &kp LCTRL &mt LGUI N1 &mt LSHFT N2 &mt LCTRL N3 &mt LALT N4 &kp N5       &kp N6    &mt LALT N7 &mt LCTRL N8 &mt LSHFT N9 &mt LGUI N0 &kp SQT
+   &kp LSHFT &kp EXCL    &kp TILDE    &kp SEMI     &kp AMPS    &kp SQT      &kp EQUAL &kp LT      &kp GT       &kp LBRC     &kp RBRC    &kp TILDE
                                 &trans    &trans    &trans    &trans    &trans    &trans
                         >;
                 };
 
                 function_layer {
 // -----------------------------------------------------------------------------------------
-// |      | BT1 | BT2 | BT3 |     |     |   |     |     |     |     | F12 | BKSP |
-// |      |BTCLR|     |     |     |     |   |     |     |     |     | F11 |  `   |
-// |      | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  | F10 |  ~   |
+// |      | BT1 | BT2 | BT3 |     |     |   |     |     |     |     | F12 |      |
+// |      |BTCLR|     |     |     |     |   |     |     |     |     | F11 |      |
+// |      | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  | F10 |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans &trans      &trans &trans &trans &trans &kp F12 &trans
