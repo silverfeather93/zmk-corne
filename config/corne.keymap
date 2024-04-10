@@ -32,7 +32,7 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                mtgap_layer {
+                default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Y    |  P      |  O      |  U      |  J  |   |  K  |  D      |  L      |  C      |  W      | BKSP |
 // | CTRL | gui(I)|  sft(N) |  ctl(E) |  alt(A) |  .  |   |  M  |  alt(H) |  ctl(T) |  sft(S) |  gui(R) |  '   |
