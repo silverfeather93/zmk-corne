@@ -61,9 +61,9 @@
 // | SHFT | ESC |MTGAP|QWERT|     |     |   |     |G(left)|G(UP)|G(DOWN)|CAPS |      |
 //                    |     |     |     |   |     |       |     |
                         bindings = <
-   &kp TAB    &kp GRAVE    &trans       &kp UP       &trans       &kp C(W)       &trans     &trans       &kp PG_UP    &kp RALT   &trans   &kp BSPC
-   &bt BT_CLR &kp TAB      &kp LEFT     &kp DOWN     &kp RIGHT    &trans         &kp LA(F4) &kp HOME     &kp PG_DN    &kp END    &trans   &trans
-   &trans     &kp ESC      &to MTGAP    &to QWERTY   &trans       &trans         &trans     &kp LG(LEFT) &kp LG(DOWN) &LG(RIGHT) &kp CAPS &trans
+   &kp TAB    &kp GRAVE    &trans       &kp UP       &trans       &kp C(W)       &trans     &trans       &kp PG_UP    &kp RALT      &trans   &kp BSPC
+   &bt BT_CLR &kp TAB      &kp LEFT     &kp DOWN     &kp RIGHT    &trans         &kp LA(F4) &kp HOME     &kp PG_DN    &kp END       &trans   &trans
+   &trans     &kp ESC      &to MTGAP    &to QWERTY   &trans       &trans         &trans     &kp LG(LEFT) &kp LG(DOWN) &kp LG(RIGHT) &kp CAPS &trans
                                         &trans       &trans       &trans         &trans     &trans       &trans
                         >;
                 };
