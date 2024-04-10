@@ -27,12 +27,15 @@
     };
 };
 
+&mt {
+    tapping-term-ms = <400>;
+};
 
 / {
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                mtgap_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Y    |  P      |  O      |  U      |  J  |   |  K  |  D      |  L      |  C      |  W      | BKSP |
 // | CTRL | gui(I)|  sft(N) |  ctl(E) |  alt(A) |  .  |   |  M  |  alt(H) |  ctl(T) |  sft(S) |  gui(R) |  '   |
