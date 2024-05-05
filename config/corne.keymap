@@ -60,12 +60,12 @@
                 navigaition_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  `  |     |  up |     |     |   |     |        | PGUP   | RALT  |     | BKSP |
-// | BTCLR| BT1 | left| down|right|     |   |A(F4)|LA(HOME)|LC(PGDN)|LS(END)|     |      |
+// | BTCLR| BT1 | left| down|right|     |   |     |LA(HOME)|LC(PGDN)|LS(END)|     |      |
 // | SHFT | ESC |MTGAP|QWERT|     |     |   |     |G(left) |G(UP)   |G(DOWN)|CAPS |      |
 //                    |     |     |     |   |     |        |        |
                         bindings = <
    &kp TAB    &kp GRAVE    &trans       &kp UP       &trans       &kp LC(W)      &trans     &trans        &kp PG_UP       &kp RALT      &trans   &kp BSPC
-   &bt BT_CLR &kp TAB      &kp LEFT     &kp DOWN     &kp RIGHT    &trans         &kp LA(F4) &mt LALT HOME &mt LCTRL PG_DN &mt LSHFT END &trans   &trans
+   &bt BT_CLR &kp TAB      &kp LEFT     &kp DOWN     &kp RIGHT    &trans         &trans     &mt LALT HOME &mt LCTRL PG_DN &mt LSHFT END &trans   &trans
    &trans     &kp ESC      &to MTGAP    &to QWERTY   &trans       &trans         &trans     &kp LG(LEFT)  &kp LG(DOWN)    &kp LG(RIGHT) &kp CAPS &trans
                                         &trans       &trans       &trans         &trans     &trans        &trans
                         >;
@@ -88,13 +88,13 @@
                 function_layer {
 // -----------------------------------------------------------------------------------------
 // |      | BT1 | BT2 | BT3 |     |     |   |     |     |     |     | F12 |      |
-// |      |BTCLR|     |VOLDN|VOLUP|     |   |     |     |     |     | F11 |      |
+// |      |BTCLR|     |VOLDN|VOLUP|     |   |A(F4)|     |     |     | F11 |      |
 // |      | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  | F10 |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans       &trans      &trans &trans &trans &trans &kp F12 &trans
-   &trans &bt BT_CLR   &trans       &kp C_VOL_DN &kp C_VOL_UP &trans      &trans &trans &trans &trans &kp F11 &trans
-   &trans &kp F1       &kp F2       &kp F3       &kp F4       &kp F5      &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
+   &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans       &trans      &trans     &trans &trans &trans &kp F12 &trans
+   &trans &bt BT_CLR   &trans       &kp C_VOL_DN &kp C_VOL_UP &trans      &kp LA(F4) &trans &trans &trans &kp F11 &trans
+   &trans &kp F1       &kp F2       &kp F3       &kp F4       &kp F5      &kp F6     &kp F7 &kp F8 &kp F9 &kp F10 &trans
                                     &trans       &trans       &trans      &trans &trans &trans
                         >;
                 };
