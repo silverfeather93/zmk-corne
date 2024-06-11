@@ -60,7 +60,7 @@
                 navigaition_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  `  |     |  up |     |     |   |     |        | PGUP   | RALT  |     | BKSP |
-// | BTCLR| BT1 | left| down|right|     |   |     |LA(HOME)|LC(PGDN)|LS(END)|     |      |
+// | BTCLR| TAB | left| down|right|     |   |     |LA(HOME)|LC(PGDN)|LS(END)|     |      |
 // | SHFT | ESC |MTGAP|QWERT|     |     |   |     |G(left) |G(UP)   |G(DOWN)|CAPS |      |
 //                    |     |     |     |   |     |        |        |
                         bindings = <
