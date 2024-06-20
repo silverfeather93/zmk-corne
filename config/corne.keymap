@@ -30,7 +30,7 @@
 / {
 
         behaviors {
-                ht_tp: holdtap_tappreffered {
+                ht: holdtap_tappreffered {
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
                         flavor = "tap-preferred";
@@ -52,7 +52,7 @@
 //                          | bksp    | NUM     | SPC |   | ENT | RSE     | ALT     |
                         bindings = <
    &kp TAB   &kp Y      &lt NAV P   &lt NUM O   &kp U      &kp J         &kp K     &kp D      &lt NUM L   &lt NAV C   &kp W      &kp BSPC
-   &kp LCTRL &ht_tp LGUI I &ht_tp LSHFT N &ht_tp LCTRL E &ht_tp LALT A &kp DOT       &kp M     &ht_tp LALT H &ht_tp LCTRL T &ht_tp LSHFT S &ht_tp LGUI R &kp SQT
+   &kp LCTRL &ht LGUI I &ht LSHFT N &ht LCTRL E &ht LALT A &kp DOT       &kp M     &ht LALT H &ht LCTRL T &ht LSHFT S &ht LGUI R &kp SQT
    &kp LSHFT &kp Q      &kp Z       &kp SEMI    &kp COMMA  &kp SQT       &kp B     &kp F      &kp G       &kp V       &kp X      &kp ESC
                                     &kp BKSP    &mo NUM    &kp ENTER     &kp SPACE &mo NAV    &kp DEL
                         >;
@@ -66,7 +66,7 @@
 //                          | GUI     | LWR     | SPC |   | ENT | RSE     | ALT     |
                         bindings = <
    &kp TAB   &kp Q      &lt NAV W   &lt NUM E   &kp R      &kp T         &kp Y     &kp U      &lt NUM I   &lt NAV O   &kp P         &kp BSPC
-   &kp LCTRL &ht_tp LGUI A &ht_tp LSHFT S &ht_tp LCTRL D &ht_tp LALT F &kp G         &kp H     &ht_tp LALT J &ht_tp LCTRL K &ht_tp LSHFT L &ht_tp LGUI SEMI &kp SQT
+   &kp LCTRL &ht LGUI A &ht LSHFT S &ht LCTRL D &ht LALT F &kp G         &kp H     &ht LALT J &ht LCTRL K &ht LSHFT L &ht LGUI SEMI &kp SQT
    &kp LSHFT &kp Z      &kp X       &kp C       &kp V      &kp B         &kp N     &kp M      &kp COMMA   &kp DOT     &kp FSLH      &kp ESC
                                     &kp BKSP    &mo NUM    &kp ENTER     &kp SPACE &mo NAV    &kp DEL
                         >;
@@ -80,7 +80,7 @@
 //                    |     |     |     |   |     |        |        |
                         bindings = <
    &kp TAB    &kp GRAVE    &trans       &kp UP       &trans       &kp LC(W)      &trans     &trans        &kp PG_UP       &kp RALT      &trans   &kp BSPC
-   &bt BT_CLR &kp TAB      &kp LEFT     &kp DOWN     &kp RIGHT    &trans         &trans     &ht_tp LALT HOME &ht_tp LCTRL PG_DN &ht_tp LSHFT END &trans   &trans
+   &bt BT_CLR &kp TAB      &kp LEFT     &kp DOWN     &kp RIGHT    &trans         &trans     &ht LALT HOME &ht LCTRL PG_DN &ht LSHFT END &trans   &trans
    &trans     &kp ESC      &to MTGAP    &to QWERTY   &trans       &trans         &trans     &kp LG(LEFT)  &kp LG(UP)    &kp LG(RIGHT) &kp CAPS &trans
                                         &trans       &trans       &trans         &trans     &trans        &trans
                         >;
@@ -94,7 +94,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp  TAB  &kp PLUS    &kp MINUS    &kp ASTRK    &kp SLASH   &kp PRCNT    &kp BSLH  &kp LPAR    &kp RPAR     &kp LBKT     &kp RBKT    &kp BSPC
-   &kp LCTRL &ht_tp LGUI N1 &ht_tp LSHFT N2 &ht_tp LCTRL N3 &ht_tp LALT N4 &kp N5       &kp N6    &ht_tp LALT N7 &ht_tp LCTRL N8 &ht_tp LSHFT N9 &ht_tp LGUI N0 &kp SQT
+   &kp LCTRL &ht LGUI N1 &ht LSHFT N2 &ht LCTRL N3 &ht LALT N4 &kp N5       &kp N6    &ht LALT N7 &ht LCTRL N8 &ht LSHFT N9 &ht LGUI N0 &kp SQT
    &kp LSHFT &kp EXCL    &kp TILDE    &kp SEMI     &kp AMPS    &kp SQT      &kp EQUAL &kp LT      &kp GT       &kp LBRC     &kp RBRC    &kp TILDE
                                 &trans    &trans    &trans    &trans    &trans    &trans
                         >;
