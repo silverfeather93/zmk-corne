@@ -76,12 +76,12 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  `  |     |  up |     |     |   |     |        | PGUP   | RALT  |     | BKSP |
 // | BTCLR| TAB | left| down|right|     |   |     |LA(HOME)|LC(PGDN)|LS(END)|     |      |
-// | SHFT | ESC |MTGAP|QWERT|     |     |   |     |G(left) |G(UP)   |G(DOWN)|CAPS |      |
+// | SHFT | ESC |MTGAP|QWERT|     |     |   |     |G(left) |G(UP)   |G(RIGH)|CAPS |      |
 //                    |     |     |     |   |     |        |        |
                         bindings = <
    &kp TAB    &kp GRAVE    &trans       &kp UP       &trans       &kp LC(W)      &trans     &trans        &kp PG_UP       &kp RALT      &trans   &kp BSPC
    &bt BT_CLR &kp TAB      &kp LEFT     &kp DOWN     &kp RIGHT    &trans         &trans     &mt LALT HOME &mt LCTRL PG_DN &mt LSHFT END &trans   &trans
-   &trans     &kp ESC      &to MTGAP    &to QWERTY   &trans       &trans         &trans     &kp LG(LEFT)  &kp LG(DOWN)    &kp LG(RIGHT) &kp CAPS &trans
+   &trans     &kp ESC      &to MTGAP    &to QWERTY   &trans       &trans         &trans     &kp LG(LEFT)  &kp LG(UP)    &kp LG(RIGHT) &kp CAPS &trans
                                         &trans       &trans       &trans         &trans     &trans        &trans
                         >;
                 };
