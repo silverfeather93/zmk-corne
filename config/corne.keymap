@@ -10,16 +10,16 @@
 #define NUM 3
 #define FUNC 4
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h>
 #include <behaviors/mouse_keys.dtsi>
-
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
+
         tri_layer {
             if-layers = <NAV NUM>;
             then-layer = <FUNC>;
@@ -27,92 +27,95 @@
     };
 };
 
-
 / {
-
-        behaviors {
-                ht: holdtap_tappreffered {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        flavor = "tap-preferred";
-                        tapping-term-ms = <200>;
-                        quick-tap-ms = <200>;
-                        require-prior-idle-ms = <125>;
-                        bindings = <&kp>, <&kp>;
-                };
+    behaviors {
+        ht: holdtap_tappreffered {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&kp>;
         };
-        
-        keymap {
-                compatible = "zmk,keymap";
+    };
 
-                mtgap_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Y    |  P      |  O      |  U      |  J  |   |  K  |  D      |  L      |  C      |  W      | BKSP |
-// | CTRL | gui(I)|  sft(N) |  ctl(E) |  alt(A) |  .  |   |  M  |  alt(H) |  ctl(T) |  sft(S) |  gui(R) |  '   |
-// | SHFT |  Q    |  Z      |  ;      |  ,      |  '  |   |  B  |  F      |  G      |  V      |  X      | ESC  |
-//                          | bksp    | NUM     | SPC |   | ENT | RSE     | ALT     |
-                        bindings = <
-   &kp TAB   &kp Y      &lt NAV P   &lt NUM O   &kp U      &kp J         &kp K     &kp D      &lt NUM L   &lt NAV C   &kp W      &kp BSPC
-   &kp LCTRL &ht LGUI I &ht LSHFT N &ht LCTRL E &ht LALT A &kp DOT       &kp M     &ht LALT H &ht LCTRL T &ht LSHFT S &ht LGUI R &kp SQT
-   &kp LSHFT &kp Q      &kp Z       &kp SEMI    &kp COMMA  &kp SQT       &kp B     &kp F      &kp G       &kp V       &kp X      &kp ESC
-                                    &kp BKSP    &mo NUM    &kp ENTER     &kp SPACE &mo NAV    &kp DEL
-                        >;
-                };
+    keymap {
+        compatible = "zmk,keymap";
 
-                qwerty_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q    |  W      |  E      |  R      |  T  |   |  Y  |  U      |  I      |  O      |  P      | BKSP |
-// | CTRL | gui(A)|  sft(S) |  ctl(D) |  alt(F) |  G  |   |  H  |  alt(J) |  ctl(K) |  sft(L) |  gui(;) |  '   |
-// | SHFT |  Z    |  X      |  C      |  V      |  B  |   |  N  |  M      |  ,      |  .      |  /      | ESC  |
-//                          | GUI     | LWR     | SPC |   | ENT | RSE     | ALT     |
-                        bindings = <
-   &kp TAB   &kp Q      &lt NAV W   &lt NUM E   &kp R      &kp T         &kp Y     &kp U      &lt NUM I   &lt NAV O   &kp P         &kp BSPC
-   &kp LCTRL &ht LGUI A &ht LSHFT S &ht LCTRL D &ht LALT F &kp G         &kp H     &ht LALT J &ht LCTRL K &ht LSHFT L &ht LGUI SEMI &kp SQT
-   &kp LSHFT &kp Z      &kp X       &kp C       &kp V      &kp B         &kp N     &kp M      &kp COMMA   &kp DOT     &kp FSLH      &kp ESC
-                                    &kp BKSP    &mo NUM    &kp ENTER     &kp SPACE &mo NAV    &kp DEL
-                        >;
-                };
-                
-                navigaition_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  `  |     |  up |     |     |   |     |        | PGUP   | RALT  |     | BKSP |
-// | BTCLR| TAB | left| down|right|     |   |     |LA(HOME)|LC(PGDN)|LS(END)|     |      |
-// | SHFT | ESC |MTGAP|QWERT|     |     |   |     |G(left) |G(UP)   |G(RIGH)|CAPS |      |
-//                    |     |     |     |   |     |        |        |
-                        bindings = <
-   &kp TAB    &kp GRAVE    &trans       &kp UP       &trans       &kp LC(W)      &trans     &trans        &kp PG_UP       &kp RALT      &trans   &kp BSPC
-   &bt BT_CLR &kp TAB      &kp LEFT     &kp DOWN     &kp RIGHT    &trans         &trans     &ht LALT HOME &ht LCTRL PG_DN &ht LSHFT END &trans   &trans
-   &trans     &kp ESC      &to MTGAP    &to QWERTY   &trans       &trans         &trans     &kp LG(LEFT)  &kp LG(UP)    &kp LG(RIGHT) &kp CAPS &trans
-                                        &trans       &trans       &trans         &trans     &trans        &trans
-                        >;
-                };
+        mtgap_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Y    |  P      |  O      |  U      |  J  |   |  K  |  D      |  L      |  C      |  W      | BKSP |
+            // | CTRL | gui(I)|  sft(N) |  ctl(E) |  alt(A) |  .  |   |  M  |  alt(H) |  ctl(T) |  sft(S) |  gui(R) |  '   |
+            // | SHFT |  Q    |  Z      |  ;      |  ,      |  '  |   |  B  |  F      |  G      |  V      |  X      | ESC  |
+            //                          | bksp    | NUM     | SPC |   | ENT | RSE     | ALT     |
 
-                number_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  +  |  -  |  *  |  /  |  %  |   |  \  |  (  |  )  |  [  |  ]  | BKSP |
-// | CTRL |LG(1)|LS(2)|LC(3)|LA(4)|  5  |   |  6  |LA(7)|LC(8)|LS(9)|LG(0)|  `   |
-// | SHFT |  !  |  ~  |  ;  |  &  |  '  |   |  =  |  <  |  >  |  {  |  }  |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp PLUS    &kp MINUS    &kp ASTRK    &kp SLASH   &kp PRCNT    &kp BSLH  &kp LPAR    &kp RPAR     &kp LBKT     &kp RBKT    &kp BSPC
-   &kp LCTRL &ht LGUI N1 &ht LSHFT N2 &ht LCTRL N3 &ht LALT N4 &kp N5       &kp N6    &ht LALT N7 &ht LCTRL N8 &ht LSHFT N9 &ht LGUI N0 &kp SQT
-   &kp LSHFT &kp EXCL    &kp TILDE    &kp SEMI     &kp AMPS    &kp SQT      &kp EQUAL &kp LT      &kp GT       &kp LBRC     &kp RBRC    &kp TILDE
-                                &trans    &trans    &trans    &trans    &trans    &trans
-                        >;
-                };
-
-                function_layer {
-// -----------------------------------------------------------------------------------------
-// |      | BT1 | BT2 | BT3 |     |     |   |     |     |     |     | F12 |      |
-// |      |BTCLR|     |VOLDN|VOLUP|     |   |A(F4)|     |     |     | F11 |      |
-// |      | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  | F10 |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans       &trans      &trans     &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &kp F12 &trans
-   &trans &bt BT_CLR   &trans       &kp C_VOL_DN &kp C_VOL_UP &trans      &kp LA(F4) &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp F11 &trans
-   &trans &kp F1       &kp F2       &kp F3       &kp F4       &kp F5      &kp F6     &kp F7         &kp F8         &kp F9          &kp F10 &trans
-                                    &trans       &trans       &trans      &trans &trans &trans
-                        >;
-                };
+            bindings = <
+&kp TAB    &kp A       &lt NAV P    &lt NUM O    &kp U       &kp J        &kp K      &kp D       &lt NUM L    &lt NAV C    &kp W       &kp BSPC
+&kp LCTRL  &ht LGUI I  &ht LSHFT N  &ht LCTRL E  &ht LALT A  &kp DOT      &kp M      &ht LALT H  &ht LCTRL T  &ht LSHFT S  &ht LGUI R  &kp SQT
+&kp LSHFT  &kp Q       &kp Z        &kp SEMI     &kp COMMA   &kp SQT      &kp B      &kp F       &kp G        &kp V        &kp X       &kp ESC
+                                    &kp BKSP     &mo NUM     &kp ENTER    &kp SPACE  &mo NAV     &kp DEL
+            >;
         };
+
+        qwerty_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q    |  W      |  E      |  R      |  T  |   |  Y  |  U      |  I      |  O      |  P      | BKSP |
+            // | CTRL | gui(A)|  sft(S) |  ctl(D) |  alt(F) |  G  |   |  H  |  alt(J) |  ctl(K) |  sft(L) |  gui(;) |  '   |
+            // | SHFT |  Z    |  X      |  C      |  V      |  B  |   |  N  |  M      |  ,      |  .      |  /      | ESC  |
+            //                          | GUI     | LWR     | SPC |   | ENT | RSE     | ALT     |
+
+            bindings = <
+&kp TAB    &kp Q       &lt NAV W    &lt NUM E    &kp R       &kp T        &kp Y      &kp U       &lt NUM I    &lt NAV O    &kp P          &kp BSPC
+&kp LCTRL  &ht LGUI A  &ht LSHFT S  &ht LCTRL D  &ht LALT F  &kp G        &kp H      &ht LALT J  &ht LCTRL K  &ht LSHFT L  &ht LGUI SEMI  &kp SQT
+&kp LSHFT  &kp Z       &kp X        &kp C        &kp V       &kp B        &kp N      &kp M       &kp COMMA    &kp DOT      &kp FSLH       &kp ESC
+                                    &kp BKSP     &mo NUM     &kp ENTER    &kp SPACE  &mo NAV     &kp DEL
+            >;
+        };
+
+        navigaition_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  `  |     |  up |     |     |   |     |        | PGUP   | RALT  |     | BKSP |
+            // | BTCLR| TAB | left| down|right|     |   |     |LA(HOME)|LC(PGDN)|LS(END)|     |      |
+            // | SHFT | ESC |MTGAP|QWERT|     |     |   |     |G(left) |G(UP)   |G(RIGH)|CAPS |      |
+            //                    |     |     |     |   |     |        |        |
+
+            bindings = <
+&kp TAB     &kp GRAVE  &trans     &kp UP      &trans     &kp LC(W)    &trans  &trans         &kp PG_UP        &kp RALT       &trans    &kp BSPC
+&bt BT_CLR  &kp TAB    &kp LEFT   &kp DOWN    &kp RIGHT  &trans       &trans  &ht LALT HOME  &ht LCTRL PG_DN  &ht LSHFT END  &trans    &trans
+&trans      &kp ESC    &to MTGAP  &to QWERTY  &trans     &trans       &trans  &kp LG(LEFT)   &kp LG(UP)       &kp LG(RIGHT)  &kp CAPS  &trans
+                                  &trans      &trans     &trans       &trans  &trans         &trans
+            >;
+        };
+
+        number_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  +  |  -  |  *  |  /  |  %  |   |  \  |  (  |  )  |  [  |  ]  | BKSP |
+            // | CTRL |LG(1)|LS(2)|LC(3)|LA(4)|  5  |   |  6  |LA(7)|LC(8)|LS(9)|LG(0)|  `   |
+            // | SHFT |  !  |  ~  |  ;  |  &  |  '  |   |  =  |  <  |  >  |  {  |  }  |  ~   |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&kp TAB    &kp PLUS     &kp MINUS     &kp ASTRK     &kp SLASH    &kp PRCNT    &kp BSLH   &kp LPAR     &kp RPAR      &kp LBKT      &kp RBKT     &kp BSPC
+&kp LCTRL  &ht LGUI N1  &ht LSHFT N2  &ht LCTRL N3  &ht LALT N4  &kp N5       &kp N6     &ht LALT N7  &ht LCTRL N8  &ht LSHFT N9  &ht LGUI N0  &kp SQT
+&kp LSHFT  &kp EXCL     &kp TILDE     &kp SEMI      &kp AMPS     &kp SQT      &kp EQUAL  &kp LT       &kp GT        &kp LBRC      &kp RBRC     &kp TILDE
+                                      &trans        &trans       &trans       &trans     &trans       &trans
+            >;
+        };
+
+        function_layer {
+            // -----------------------------------------------------------------------------------------
+            // |      | BT1 | BT2 | BT3 |     |     |   |     |     |     |     | F12 |      |
+            // |      |BTCLR|     |VOLDN|VOLUP|     |   |A(F4)|     |     |     | F11 |      |
+            // |      | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  | F10 |      |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans        &trans    &trans      &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &kp F12  &trans
+&trans  &bt BT_CLR    &trans        &kp C_VOL_DN  &kp C_VOL_UP  &trans    &kp LA(F4)  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp F11  &trans
+&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5    &kp F6      &kp F7          &kp F8          &kp F9           &kp F10  &trans
+                                    &trans        &trans        &trans    &trans      &trans          &trans
+            >;
+        };
+    };
 };
