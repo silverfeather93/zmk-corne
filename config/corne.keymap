@@ -51,7 +51,7 @@
             //                          | bksp    | NUM     | SPC |   | ENT | RSE     | ALT     |
 
             bindings = <
-&kp TAB    &kp Y       &lt NAV P    &lt NUM O    &kp U       &kp J        &kp K      &kp D       &lt NUM L    &lt NAV C    &kp W       &kp BSPC
+&kp TAB    &kp Z       &lt NAV P    &lt NUM O    &kp U       &kp J        &kp K      &kp D       &lt NUM L    &lt NAV C    &kp W       &kp BSPC
 &kp LCTRL  &ht LGUI I  &ht LSHFT N  &ht LCTRL E  &ht LALT A  &kp DOT      &kp M      &ht LALT H  &ht LCTRL T  &ht LSHFT S  &ht LGUI R  &kp SQT
 &kp LSHFT  &kp Q       &kp Z        &kp SEMI     &kp COMMA   &kp SQT      &kp B      &kp F       &kp G        &kp V        &kp X       &kp ESC
                                     &kp BKSP     &mo NUM     &kp ENTER    &kp SPACE  &mo NAV     &kp DEL
