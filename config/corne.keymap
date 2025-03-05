@@ -9,6 +9,7 @@
 #define NAV 2
 #define NUM 3
 #define FUNC 4
+#define NOTHING 5
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
