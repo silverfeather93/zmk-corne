@@ -19,6 +19,6 @@
 ---
 include:
   - board: nice_nano@2.0.0//zmk
-    shield: nice_view_adapter nice_view corne_left
+    shield: corne_left nice_view_adapter nice_view
   - board: nice_nano@2.0.0//zmk
-    shield: nice_view_adapter nice_view corne_right
+    shield: corne_right nice_view_adapter nice_view
